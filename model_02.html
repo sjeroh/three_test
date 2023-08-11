@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>모델링 스크롤 제어</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 60px;
+            pointer-events: none;
+        }
+
+        #canvasWrap {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        article {
+            position: absolute;
+            width: 300px;
+        }
+
+        section {
+            font-size: 30px;
+            width: 100%;
+            padding: 35vh 50px;
+            /* border-bottom: 4px solid red; */
+
+        }
+
+        .wrap {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .backg {
+            position: absolute;
+            overflow-y: scroll;
+            top: 10vh;
+            right: 0;
+            text-align: center;
+            background-color: rgba(22, 22, 22, 0.4);
+            padding: 3vw;
+            margin-right: 5vw;
+            width: 35vw;
+            opacity: 0;
+            transition: .3s;
+            border-radius: 6px;
+            backdrop-filter: blur(20px);
+            height: 60vh;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            pointer-events: all;
+            color: #fff;
+
+        }
+
+        .backg::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .backg::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        .backg::-webkit-scrollbar-thumb {
+            background-color: #a4a4a4;
+            border-radius: 5px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+        }
+
+        .backg::-webkit-scrollbar-track {
+            display: none;
+        }
+
+        .backg::-webkit-scrollbar-button {}
+
+        .backg p {}
+
+        .backg.show {
+            opacity: 0.7;
+
+        }
+
+        .close{
+            cursor: pointer;
+            position: absolute;
+            pointer-events: all;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            right: 0;
+            top: 0;
+            padding: 10px;
+            margin-right: 2vw;
+            margin-top: 2vw;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: .3s;
+            opacity: 0;
+        }
+        .close.show{
+            opacity: .8;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="./js/model_02.js" type="module" defer></script>
+</head>
+
+<body>
+    <div id="canvasWrap"></div>
+    <article>
+        <section>
+            <h1>타이틀</h1>
+
+        </section>
+        <div class="wrap">
+            <div class="close"><i class="fas fa-times"></i></div>
+            <div class="backg tab">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam ducimus itaque inventore,
+                    excepturi distinctio corporis non deleniti totam quo nobis. Neque quaerat temporibus esse?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam ducimus itaque inventore,
+                    excepturi distinctio corporis non deleniti totam quo nobis. Neque quaerat temporibus esse?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam ducimus itaque inventore,
+                    excepturi distinctio corporis non deleniti totam quo nobis. Neque quaerat temporibus esse?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam ducimus itaque inventore,
+                    excepturi distinctio corporis non deleniti totam quo nobis. Neque quaerat temporibus esse?Lorem
+                    ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam necessitatibus ipsam, sequi quo
+                    incidunt maiores excepturi quaerat soluta repudiandae molestias provident obcaecati ipsa non
+                    possimus voluptates at voluptate pariatur vitae, vero animi eveniet rerum! Nemo beatae nobis
+                    reiciendis repellat fugiat veniam quidem minima ad quis! Dolores, accusantium possimus laudantium
+                    eos dolor nesciunt saepe vero assumenda illo architecto, enim id fugit ipsam ducimus fuga quia ut
+                    unde eius, soluta iste magni. Quod architecto soluta doloribus reiciendis ex est id eum iure.</p>
+            </div>
+        </div>
+
+    </article>
+</body>
+
+</html>
